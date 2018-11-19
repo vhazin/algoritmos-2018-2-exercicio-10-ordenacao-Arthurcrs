@@ -28,7 +28,7 @@ int main()
     int numberOfBadBehavior = 0;
     int numberOfGoodBehavior = 0;
     scanf("%d", &numberOfNames);
-    char *names[20] = (char *)malloc(numberOfNames * NAME_MAX_NUMBER_OF_CHARACTERS * sizeof(char));
+    char *names[20] = (char **)malloc(numberOfNames * NAME_MAX_NUMBER_OF_CHARACTERS * sizeof(char));
     for (int i = 0; i < numberOfNames; i++)
     {
         scanf("%c %s", &behaviorCharacter, &names[i]);
@@ -40,11 +40,10 @@ int main()
         {
             numberOfBadBehavior++;
         }
-        //store name in array of names
     }
-    
+
     //sort array of names
-    
+
     printArrayOfNames(names);
     printf("Se comportaram : %d | Nao se comportaram : %d", numberOfGoodBehavior, numberOfBadBehavior);
     return 0;
